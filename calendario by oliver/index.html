@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Interactivo - Oliver Solórzano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-calendar-days"></i> Calendario Interactivo</h1>
+        <div class="calendar-controls">
+            <button id="prevMonth"><i class="fa-solid fa-chevron-left"></i></button>
+            <select id="selectMonth"></select>
+            <select id="selectYear"></select>
+            <button id="nextMonth"><i class="fa-solid fa-chevron-right"></i></button>
+            <button id="openAddEventModal"><i class="fa-solid fa-plus"></i> Agregar Evento</button>
+            <button id="syncGoogle"><i class="fa-brands fa-google"></i> Sincronizar con Google Calendar</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="calendar"></div>
+    </main>
+
+    <!-- Modal de eventos -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-date">Crea una recordatorio</h2>
+
+            <label>Selecciona día y mes:</label>
+            <div class="modal-calendar">
+                <input type="date" id="modalDatePicker">
+            </div>
+
+            <input type="text" id="eventTitle" placeholder="Nombre del evento">
+            <input type="time" id="eventTime">
+
+            <div class="modal-buttons">
+                <button id="saveEvent"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                <button id="deleteEvent"><i class="fa-solid fa-trash"></i> Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
